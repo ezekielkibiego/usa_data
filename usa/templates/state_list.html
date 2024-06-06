@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}State List{% endblock %}
+
+{% block content %}
+<div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold mb-4">List of States</h1>
+    <div class="overflow-x-auto">
+        <table class="min-w-full bg-white border border-gray-200">
+            <thead class="bg-gray-100">
+                <tr>
+                    <th class="px-4 py-2 border-b border-gray-200">State Name</th>
+                    <th class="px-4 py-2 border-b border-gray-200">Abbreviation</th>
+                    <th class="px-4 py-2 border-b border-gray-200">Region</th>
+                    <th class="px-4 py-2 border-b border-gray-200">Division</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for state in states %}
+                <tr class="hover:bg-gray-50">
+                    <td class="px-4 py-2 border-b border-gray-200">{{ state.state_name }}</td>
+                    <td class="px-4 py-2 border-b border-gray-200">{{ state.state_abbrev }}</td>
+                    <td class="px-4 py-2 border-b border-gray-200">{{ state.region }}</td>
+                    <td class="px-4 py-2 border-b border-gray-200">{{ state.division }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
